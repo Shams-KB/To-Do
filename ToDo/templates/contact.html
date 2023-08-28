@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+
+    <div class="container">
+        <div class="message-header">
+            <h1>Send Your Message</h1>
+        </div>
+        <form class="message-form" action="" method="post">
+            <label>Name</label>
+            <input name="name" id="name" type="text" placeholder="Name">
+            <label for="email">Email</label>
+            <input name="email" id="email" type="text" placeholder="Email">
+            <textarea rows="5" id="message" placeholder="Message" class="form-control"></textarea>
+            <button type="submit" class="submitbtn">Send</button>
+        </form>
+    </div>
+{% include 'footer.html' %}

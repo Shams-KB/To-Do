@@ -1,0 +1,10 @@
+{% include 'header.html' %}
+
+    <div class="starting-page">
+        <h1>Welcome!</h1>
+        <h2>Login or Register</h2>
+        <a class="btn btn-primary" href="{{ url_for('login') }}"><button class="startbtn">Login</button></a>
+        <a class="btn btn-primary" href="{{ url_for('register') }}"><button class="startbtn">Register</button></a>
+    </div>
+
+{% include 'footer.html' %}

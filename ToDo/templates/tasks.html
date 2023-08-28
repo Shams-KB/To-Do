@@ -1,0 +1,36 @@
+{% include 'header.html' %}
+
+    <div class="accordion-container">
+        <div class="task-heading">
+            <h1>Welcome to ToDo!!!</h1>
+            <p>Note your tasks and never skip any undone activity.</p>
+        </div>
+
+        {% for n in form %}
+        {% if n.author == current_user %}
+            <button class="accordion">{{ n.title }}</button>
+            <div class="panel"><p>{{ n.subtitle }}</p></div>
+        {% endif %}
+        {% endfor %}
+
+        <a href="{{ url_for('add_task') }}"><button class="addbtn">Add Task</button></a>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+              });
+            }
+        </script>
+
+    </div>
+
+{% include 'footer.html' %}
